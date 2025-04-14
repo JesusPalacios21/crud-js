@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crud NodeJs</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-light">
+    <main>
+      <section class="container mt-5">
+        <div class="card shadow">
+          <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">Lista de Vehículos</h5>
+            <a href="./create" class="btn btn-success btn-sm">+ Registrar</a>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-striped table-hover table-bordered align-middle text-center">
+                <thead class="table-dark">
+                  <tr>
+                    <th>ID</th>
+                    <th>TIPO</th>
+                    <th>MARCA</th>
+                    <th>COLOR</th>
+                    <th>OPERACIONES</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% registros.forEach(vehiculo => { %>
+                  <tr>
+                    <td><%= vehiculo.id %></td>
+                    <td><%= vehiculo.tipo %></td>
+                    <td><%= vehiculo.marca %></td>
+                    <td><%= vehiculo.color %></td>
+                    <td>
+                      <a href="./edit/<%= vehiculo.id %>" class="btn btn-warning btn-sm me-1">Editar</a>
+                      <a href="./delete" class="btn btn-danger btn-sm">Eliminar</a>
+                    </td>
+                  </tr>
+                  <% }) %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

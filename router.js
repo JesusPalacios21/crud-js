@@ -11,7 +11,10 @@ router.get('/', (req, res) => {
     if(error){
       throw error;
     }else{
-      res.send(results);
+      //Enviamos "json" los datos al navegador
+      //res.send(results);
+      //res.render('edit', { dev: 'Jesus Eduardo Yataco Palacios', skill:'Javascript', friends:['a','b','c']});
+      res.render('index', {registros: results})
     }
   });
 });
